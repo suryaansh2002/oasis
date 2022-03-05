@@ -6,6 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="icon" href="../assets/images/logo.png" type="image/png" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -13,12 +15,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="../assets/styles/main.css" />
-    <title>Oasis</title>
+    <title>MetaReality</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#"
+          ><img src="../assets/images/logo.png" class="nav-logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -80,7 +84,7 @@
         <div class="m-card">
           <img src="../assets/images/m1.jpg" class="mc-img" />
           <div class="mc-name">Item 3 Name</div>
-          <div class="mc-price">Price: 0.03  ETH</div>
+          <div class="mc-price">Price: 0.03 ETH</div>
           <div class="mc-about">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et
             ultricies ante. Proin non tempus diam.
@@ -138,6 +142,15 @@
     </div>
     <div></div>
     <script>
+      const array=[
+        {
+          id:1,
+          title:'ghghgh',
+          img:'name',
+          about:'fkfkgkgkgkgkggkgkgkgkggkgkgkgkg',
+          price:0.1
+        }
+      ]
       const objArr = [
         {
           id: 1,
@@ -178,10 +191,10 @@
           }
         }
       }
-            function getTotal(array){
-        var cost=0;
-        for(var i=0;i<array.length;i++){
-          cost+=getObj(array[i]).price
+      function getTotal(array) {
+        var cost = 0;
+        for (var i = 0; i < array.length; i++) {
+          cost += getObj(array[i]).price;
         }
         return cost;
       }
@@ -189,15 +202,14 @@
       function deleteItem(id) {
         var arr = JSON.parse(localStorage.getItem("oasis-cart"));
         arr = arr.filter((item) => item != id);
-        if(arr.length==0){
-          localStorage.removeItem('oasis-cart');
+        if (arr.length == 0) {
+          localStorage.removeItem("oasis-cart");
           document.getElementsByClassName("cart-content")[0].innerHTML =
             "Sorry you do not have any items in your cart!";
         }
         localStorage.setItem("oasis-cart", JSON.stringify(arr));
         document.getElementsByClassName("cart-content")[0].innerHTML = "";
 
-        
         var map = arr.map((id) => {
           document.getElementsByClassName(
             "cart-content"
@@ -210,10 +222,10 @@
          </div>`;
         });
         document.getElementsByClassName(
-              "cart-content"
-            )[0].innerHTML += `<div class="total-row">Total: ${getTotal(arr)}  ETH (approx ${getTotal(arr)*2600} USD) </div>`
-       
-        
+          "cart-content"
+        )[0].innerHTML += `<div class="total-row">Total: ${getTotal(
+          arr
+        )}  ETH (approx ${getTotal(arr) * 2600} USD) </div>`;
       }
       window.onload = function () {
         console.log("in");
@@ -237,8 +249,10 @@
          </div>`;
           });
           document.getElementsByClassName(
-              "cart-content"
-            )[0].innerHTML += `<div class="total-row">Total: ${getTotal(current)}  ETH (approx ${getTotal(current)*2600} USD) </div>`
+            "cart-content"
+          )[0].innerHTML += `<div class="total-row">Total: ${getTotal(
+            current
+          )}  ETH (approx ${getTotal(current) * 2600} USD) </div>`;
         }
       };
 
@@ -268,9 +282,11 @@
          </div>`;
         });
         document.getElementsByClassName(
-              "cart-content"
-            )[0].innerHTML += `<div class="total-row">Total: ${getTotal(current)}  ETH (approx ${getTotal(current)*2600} USD) </div>`
-    
+          "cart-content"
+        )[0].innerHTML += `<div class="total-row">Total: ${getTotal(
+          current
+        )}  ETH (approx ${getTotal(current) * 2600} USD) </div>`;
+
         // document.getElementsByClassName('cart-content')[0].innerHTML=map;
       }
     </script>

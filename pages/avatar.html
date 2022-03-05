@@ -6,6 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -13,12 +15,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="../assets/styles/main.css" />
-    <title>Oasis</title>
+    <title>MetaReality</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#"
+          ><img src="../assets/images/logo.png" class="nav-logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -88,9 +92,33 @@
       <div id="av-div">
         <!-- <div id="av-name">Hi Suryaansh, your avatar is</div> -->
         <img src="../assets//images/fck.png" id="av-img" />
+        <div class="av-text">This is what you look like in MetaReality!</div>
+        <div><button class="reset-btn" onclick="reset()">Change Your Avatar</button></div>
       </div>
     </div>
     <script>
+      function reset(){
+        localStorage.removeItem('oasis-avatar');
+        window.location.reload();          
+      }
+      window.onload = function () {
+        console.log('mc')
+        if (localStorage.getItem("oasis-avatar")) {
+        console.log('mc11')
+
+          im = localStorage.getItem("oasis-avatar");
+          name = localStorage.getItem("oasis-name");
+          document.getElementById("form").style.visibility = "hidden";
+          document.getElementById("form").style.display = "none";
+          document.getElementById(
+            "avatar-h"
+          ).innerHTML = `Hi ${name}, your avatar is:`;
+          document.getElementById("av-img").src = `../assets/images/${im}.png`;
+
+          document.getElementById("av-div").style.visibility = "visible";
+          document.getElementById("av-div").style.display = "block";
+        }
+      };
       const form = document.getElementById("create");
 
       form.addEventListener("submit", (event) => {
@@ -104,6 +132,8 @@
         var im = gender + attire + age;
 
         localStorage.setItem("oasis-avatar", im);
+        localStorage.setItem("oasis-name", name);
+
         document.getElementById("form").style.visibility = "hidden";
         document.getElementById("form").style.display = "none";
         document.getElementById(
