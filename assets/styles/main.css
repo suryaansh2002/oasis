@@ -559,3 +559,141 @@ body {
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
 }
+@media only screen and (max-width: 600px) {
+.robotL,.robotR{
+  display: none;
+  visibility: hidden;
+}
+.heading{
+  font-size: 5vw;
+}
+.index-btn{
+  width: 50vw;
+  height: 50vw;
+  font-size: 3.5vw;
+}
+.home-logo{
+  width: 55px;
+  height: 55px;
+}
+#title{
+  overflow-x: hidden;
+width: 100vw;
+ 
+  font-size: 6vw;
+}
+.home-subh{
+  font-size: 4vw;
+  overflow-x: hidden;
+  width: 100vw;
+
+}
+
+.home-name{
+  font-size: 5vw;
+  overflow-x: hidden;
+
+
+}
+.what-card{
+  width: 40vw;
+  height: 40vw;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+
+}
+.what-h{
+  font-size: 3.5vw;
+  overflow-x: hidden;
+
+}
+nav{
+  overflow-x: hidden;
+width: 100vw;
+}
+.what-row{
+  overflow-x: hidden;
+width: 100vw;
+margin-right: 0;
+padding-right: 0;
+padding: 0;
+margin: 0;
+}
+.carousel {
+  width: 90vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+margin-top: 5vw;
+}
+.carousel img{
+  height: 60vw;
+  
+}
+.carousel-item h5 {
+  font-size: 3vw;
+  font-weight: 700;
+}
+body{
+  
+}
+.main-content{
+  height: 100vh;
+}
+.carousel-caption{
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  position: static;
+}
+#bh{
+  width: 90%;
+  margin-left: 5%;
+}
+.b-img{
+  width: 80%;
+  height: auto;
+  margin-left: 10%;
+  margin-top: 0rem;
+}
+.b-name{
+  font-size: 6vw;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.b-source{
+  font-size: 1rem;
+}
+.b-text{
+  width: 90%;
+  margin-left: 5%;
+  font-size: 0.9rem;
+}
+.form-box{
+  width: 90vw;
+  font-size: 0.9r;
+font-size: .9rem;
+}
+#avatar-h {
+font-size: 6vw;
+}
+.main-c{
+  min-height: 110vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+#av-img{
+  width: 50vw;
+  height: auto;
+}
+.av-text{
+  font-size: 4.5vw;
+}
+.reset-btn{
+  font-size: 0.9rem;
+  /* margin-left: 0; */
+  /* transform: none; */
+  width: 80%;
+  
+}
+}
+
