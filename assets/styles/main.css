@@ -161,7 +161,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 0rem 1.5rem;
+  margin: 0rem 3.5rem;
 }
 
 .what-h {
@@ -371,6 +371,9 @@ body {
   font-weight: 700;
   font-family: "Josefin Sans", sans-serif;
   background: linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%);
+background: linear-gradient(to right, #ffffff8e 10%, #8c5bbb 50%, #580258 60%);
+
+
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
@@ -387,7 +390,7 @@ body {
 
 @keyframes indexanim {
     to {
-    background-position: 200% center;
+    background-position: 100% center;
     }
     }
 
@@ -464,4 +467,69 @@ body {
       margin-top: 1.5rem;
     }
 
-    
+.home-logo{
+  width: 70px;
+  height: 70px;
+}
+
+.home-subh{
+  font-size: 1.3rem;
+  margin: 1rem 0rem;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  margin-bottom: 5rem;
+}
+
+.robotL{
+  position: absolute;
+  left: 10px;
+  height: 10rem;
+  animation-name: moveLeft;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes moveLeft {
+  0% { -webkit-transform: translateX(0px); }
+  50% { -webkit-transform: translateX(300%); }
+  100% { -webkit-transform: translateX(0%); }
+
+}
+@keyframes moveRight {
+  0% { -webkit-transform: translateX(0px); }
+  50% { -webkit-transform: translateX(-300%); }
+  100% { -webkit-transform: translateX(0%); }
+
+}
+.robotR{
+  position: absolute;
+  right: 10px;
+  height: 10rem;
+  animation-name: moveRight;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.b-source{
+  font-size: 1.2rem;
+  font-style: italic;
+  text-decoration: underline;
+
+}
+.b-source a{
+  color: white;
+}
+.search-shop{
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 2rem;
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 15px;
+}
+
+.search-shop::placeholder{
+  color: rgba(255, 255, 255, 0.788);
+}
