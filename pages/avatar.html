@@ -53,8 +53,12 @@
       </div>
     </nav>
     <div>
+      <div id="avatar-h">Create Your Avatar Now!</div>
       <div class="form-box" id="form">
         <form action="" method="" id="create">
+          <div class="avatar-sh">
+            Fill out these filters to help us create a suitable avatar for you!
+          </div>
           <input
             type="text"
             id="name"
@@ -78,12 +82,12 @@
             <option value="a">Adults</option>
             <option value="s">Senior Citizens</option>
           </select>
-          <button type="submit">Submit</button>
+          <button class="form-submit" type="submit">Submit</button>
         </form>
       </div>
-      <div>
-        <div id="av-name">Hi Suryaansh, your avatar is</div>
-        <img src="../assets//images/fck.png" id="av-img"/>
+      <div id="av-div">
+        <!-- <div id="av-name">Hi Suryaansh, your avatar is</div> -->
+        <img src="../assets//images/fck.png" id="av-img" />
       </div>
     </div>
     <script>
@@ -91,24 +95,32 @@
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        // handle the form data
         console.log("hi");
         var name = document.getElementById("name").value;
         var gender = document.getElementById("gender").value;
         var attire = document.getElementById("attire").value;
         var age = document.getElementById("age").value;
 
-        var im=gender+attire+age;
+        var im = gender + attire + age;
 
-        localStorage.setItem('oasis-avatar',im);
-        document.getElementById("form").style.visibility="hidden"
+        localStorage.setItem("oasis-avatar", im);
+        document.getElementById("form").style.visibility = "hidden";
+        document.getElementById("form").style.display = "none";
+        document.getElementById(
+          "avatar-h"
+        ).innerHTML = `Hi ${name}, your avatar is:`;
+        document.getElementById("av-img").src = `../assets/images/${im}.png`;
+
+        document.getElementById("av-div").style.visibility = "visible";
+        document.getElementById("av-div").style.display = "block";
+
         var data = {
           name,
           gender,
           attire,
           age,
         };
-    
+
         console.log(data);
       });
     </script>
