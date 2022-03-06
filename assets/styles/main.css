@@ -42,6 +42,9 @@ body {
   transition: 0.5s;
 }
 
+.index-btn:focus{
+  outline: none;
+}
 .index-btn:hover {
   transform: scale(1.1);
 }
@@ -119,10 +122,14 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
-.nav-item {
-  padding: 0.5rem 1rem;
+.nav-item a{
   font-size: 1.1rem;
 }
+.nav-item{
+  padding: 0.5rem 2rem;
+
+}
+
 .home-name {
   font-size: 2rem;
   margin: 1.5rem 0rem;
@@ -559,6 +566,42 @@ body {
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
 }
+
+.toggle-btn{
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  transition: 0.5s;
+}
+.toggle-btn:hover{
+cursor: pointer;
+background-color: white;
+color: #000;
+}
+.toggle-btn:focus{
+  outline: none;
+}
+/*Light styles*/
+.light{
+  background: rgb(218, 218, 218);
+  color: black;
+}
+.light .toggle-btn{
+  color: black;
+  border: 1px solid black;
+}
+.light nav .nav-item{
+  color: black;
+}
+.light .home-name,.light .home-subh{
+  color: black;
+}
+.light .toggle-btn:hover{
+color: white;
+background-color: #000;
+}
 @media only screen and (max-width: 600px) {
 .robotL,.robotR{
   display: none;
@@ -695,5 +738,87 @@ font-size: 6vw;
   width: 80%;
   
 }
+
+#search{
+  width: 80vw;
+  margin-left: 10vw;
+}
+.m-card{
+  display: block;
+  width: 70vw;
+  margin-left: 15vw;
+}
+.cart-row{
+  font-size: 1.35rem;
+  width: 100vw;
+  overflow-x: hidden;
+}
+.cart-item{
+  width: 100vw;
+  overflow-x: hidden;
+  
+}
+.cart-row .col-lg-5,.cart-row .col-lg-2{
+  display: inline-block;
+  width: 40vw;
+}
+.cart-item .col-lg-5{
+  display: inline-block;
+  width: 50vw;
+}
+
+.cart-item .col-lg-3{
+  display: inline-block;
+  width: 30vw;
+}
+.cart-item .col-lg-2{
+  display: inline-block;
+  width: 10vw;
+}
+
+
+}
+
+@media only screen and (max-width: 480px) {
+  .m-card{
+    width: 90vw;
+    margin-left: 5vw;
+
+  }
+  .mc-name{
+    font-size: 1.2rem;
+  }
+  .mc-price{
+    font-size: 0.9rem;
+  }
+  .mc-about{
+    font-size: 0.8rem;
+  }
+
+  .cart-content .cart-item *{
+    font-size: 0.9rem;
+  }
+  .cart-item .col-lg-5{
+    display: inline-block;
+    width: 50vw;
+  }
+  
+  .cart-item .col-lg-3{
+    display: inline-block;
+    width: 25vw;
+  }
+  .cart-item .col-lg-2{
+    display: inline-block;
+    width: 10vw;
+  }
+  .cart-content{
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  .total-row{
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  
 }
 

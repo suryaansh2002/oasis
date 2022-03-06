@@ -189,9 +189,11 @@
         var arr = JSON.parse(localStorage.getItem("oasis-cart"));
         arr = arr.filter((item) => item != id);
         if (arr.length == 0) {
+          console.log("innnnnnn")
           localStorage.removeItem("oasis-cart");
           document.getElementsByClassName("cart-content")[0].innerHTML =
             "Sorry you do not have any items in your cart!";
+          return
         }
         localStorage.setItem("oasis-cart", JSON.stringify(arr));
         document.getElementsByClassName("cart-content")[0].innerHTML = "";
@@ -203,7 +205,7 @@
           
             <div class="col-lg-1"></div>
           <div class="col-lg-5"> ${getObj(id).title}</div>
-          <div class="col-lg-2"> ${getObj(id).price}  ETH</div>
+          <div class="col-lg-3"> ${getObj(id).price}  ETH</div>
           <div class="col-lg-2"><button class="del-btn" onclick="deleteItem(${id})">Delete</button></div>
          </div>`;
         });
@@ -244,7 +246,7 @@
           
             <div class="col-lg-1"></div>
           <div class="col-lg-5"> ${getObj(id).title}</div>
-          <div class="col-lg-2"> ${getObj(id).price}  ETH</div>
+          <div class="col-lg-3"> ${getObj(id).price}  ETH</div>
           <div class="col-lg-2"><button class="del-btn" onclick="deleteItem(${id})">Delete</button></div>
          </div>`;
           });
@@ -275,7 +277,7 @@
           
             <div class="col-lg-1"></div>
           <div class="col-lg-5"> ${getObj(id).title}</div>
-          <div class="col-lg-2"> ${getObj(id).price}  ETH</div>
+          <div class="col-lg-3"> ${getObj(id).price}  ETH</div>
           <div class="col-lg-2"><button class="del-btn" onclick="deleteItem(${id})">Delete</button></div>
 
 
