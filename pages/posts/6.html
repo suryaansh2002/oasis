@@ -34,12 +34,14 @@
                         <a class="nav-link" href="../avatar.html">Create Your Avatar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../blogs.html">Infographics and Blogs</a>
+                        <a class="nav-link active" href="../blogs.html">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../market.html">Virtual Market</a>
                     </li>
                 </ul>
+          <button class="toggle-btn" onclick="toggle()">Toggle Theme</button>
+
             </div>
         </div>
     </nav>
@@ -92,7 +94,17 @@
 
     </div>
 
-
+    <script>
+        function toggle(){
+          var elem=document.body;
+      elem.classList.toggle('light')
+      var n=document.getElementsByClassName('navbar-expand-lg')[0]
+        n.classList.toggle('navbar-dark')
+        n.classList.toggle('navbar-light')
+        
+      }
+      
+      </script>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
