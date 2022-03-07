@@ -719,6 +719,13 @@ background-color: #000;
 
 }
 @media only screen and (max-width: 600px) {
+  .h-row{
+    width: 100%;
+    overflow-x: hidden;
+    padding:0;
+    margin:0;
+  }
+
 .robotL,.robotR{
   display: none;
   visibility: hidden;
@@ -898,6 +905,7 @@ font-size: 6vw;
 }
 
 @media only screen and (max-width: 480px) {
+  
   .m-card{
     width: 90vw;
     margin-left: 5vw;
