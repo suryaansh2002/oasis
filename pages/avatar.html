@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link rel="icon" href="../assets/images/logo.png" type="image/png" />
 
     <link
       rel="stylesheet"
@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/styles/main.css" />
     <title>MetaReality</title>
     <style>
-      body{
+      body {
         height: 100vh;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -61,7 +61,6 @@
             </li>
           </ul>
           <button class="toggle-btn" onclick="toggle()">Toggle Theme</button>
-
         </div>
       </div>
     </nav>
@@ -102,29 +101,53 @@
         <!-- <div id="av-name">Hi Suryaansh, your avatar is</div> -->
         <img src="../assets//images/fck.png" id="av-img" />
         <div class="av-text">This is what you look like in MetaReality!</div>
-        <div><button class="reset-btn" onclick="reset()">Change Your Avatar</button></div>
+        <div>
+          <button class="reset-btn" onclick="reset()">
+            Change Your Avatar
+          </button>
+        </div>
       </div>
     </div>
     <script>
-      function toggle(){
-        var elem=document.body;
-    elem.classList.toggle('light')
-    var n=document.getElementsByClassName('navbar-expand-lg')[0]
-      n.classList.toggle('navbar-dark')
-      n.classList.toggle('navbar-light')
-      
-    }
-    
-    </script>
-    <script>
-      function reset(){
-        localStorage.removeItem('oasis-avatar');
-        window.location.reload();          
+      function toggle() {
+        var elem = document.body;
+        elem.classList.toggle("light");
+        var n = document.getElementsByClassName("navbar-expand-lg")[0];
+        n.classList.toggle("navbar-dark");
+        n.classList.toggle("navbar-light");
+        if (elem.classList.contains("light")) {
+          localStorage.setItem("oasis-light", true);
+        } else {
+          localStorage.removeItem("oasis-light");
+        }
       }
       window.onload = function () {
-        console.log('mc')
+        if (localStorage.getItem("oasis-light")) {
+          var elem = document.body;
+          elem.classList.toggle("light");
+          var n = document.getElementsByClassName("navbar-expand-lg")[0];
+          n.classList.toggle("navbar-dark");
+          n.classList.toggle("navbar-light");
+        }
+      };
+    </script>
+    <script>
+      function reset() {
+        localStorage.removeItem("oasis-avatar");
+        window.location.reload();
+      }
+      window.onload = function () {
+        if (localStorage.getItem("oasis-light")) {
+          var elem = document.body;
+          elem.classList.toggle("light");
+          var n = document.getElementsByClassName("navbar-expand-lg")[0];
+          n.classList.toggle("navbar-dark");
+          n.classList.toggle("navbar-light");
+        }
+
+        console.log("mc");
         if (localStorage.getItem("oasis-avatar")) {
-        console.log('mc11')
+          console.log("mc11");
 
           im = localStorage.getItem("oasis-avatar");
           name = localStorage.getItem("oasis-name");
@@ -190,7 +213,10 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

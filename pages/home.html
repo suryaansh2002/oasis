@@ -88,17 +88,31 @@ Virtual Market
        
       </div>
     </a>
-<script>
-  function toggle(){
-    var elem=document.body;
-elem.classList.toggle('light')
-var n=document.getElementsByClassName('navbar-expand-lg')[0]
-  n.classList.toggle('navbar-dark')
-  n.classList.toggle('navbar-light')
-  
-}
+    <script>
+      function toggle() {
+        var elem = document.body;
+        elem.classList.toggle("light");
+        var n = document.getElementsByClassName("navbar-expand-lg")[0];
+        n.classList.toggle("navbar-dark");
+        n.classList.toggle("navbar-light");
+        if(elem.classList.contains('light')){
+          localStorage.setItem('oasis-light',true);
+        }
+        else{
+          localStorage.removeItem('oasis-light')
+        }
+      }
+      window.onload = function(){
+        if(localStorage.getItem('oasis-light')){
+          var elem = document.body;
+        elem.classList.toggle("light");
+        var n = document.getElementsByClassName("navbar-expand-lg")[0];
+        n.classList.toggle("navbar-dark");
+        n.classList.toggle("navbar-light");
 
-</script>
+        }
+      }
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
